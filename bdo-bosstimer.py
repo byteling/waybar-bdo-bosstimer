@@ -35,7 +35,8 @@ def generate_instances(bosses, days_ahead=7):
 
 def find_next(instances):
     now = datetime.now()
-    future = [i for i in instances if i[0] >= now]
+    fifteen_minutes_ago = now - timedelta(minutes=15)
+    future = [i for i in instances if i[0] >= fifteen_minutes_ago]
     if not future:
         return None
     future.sort(key=lambda x: x[0])
@@ -64,6 +65,7 @@ def main():
 
     # Pre-generate instances once and refresh each minute in case of day rollover / JSON changes
     instances = generate_instances(bosses, days_ahead=8)
+    instances.sort(key=lambda x: x[0])
     last_reload = time.time()
 
     while True:
@@ -74,6 +76,7 @@ def main():
             try:
                 bosses = load_bosses(JSON_FILE)
                 instances = generate_instances(bosses, days_ahead=8)
+                instances.sort(key=lambda x: x[0])
             except Exception:
                 pass
             last_reload = time.time()
@@ -87,22 +90,57 @@ def main():
 
         next_dt, entries = nxt
         delta = next_dt - now
-        countdown = format_duration(delta)
-
         # collect unique boss names keeping order
         names = []
         seen = set()
-        tooltip_lines = []
         for dt, name, tstr in entries:
             if name not in seen:
                 names.append(name)
                 seen.add(name)
-            tooltip_lines.append(f"{name} — {tstr}")
-
         display_names = ", ".join(names)
+
+        # Tooltip
+        unique_times = sorted(list(set(i[0] for i in instances)))
+        current_time_idx = -1
+        try:
+            current_time_idx = unique_times.index(next_dt)
+        except ValueError:
+            pass
+
+        tooltip_lines = []
+        if current_time_idx > 0:
+            prev_time = unique_times[current_time_idx-1]
+            boss_names = ", ".join(sorted(list(set(i[1] for i in instances if i[0] == prev_time))))
+            tooltip_lines.append(f"Prev: {boss_names} at {prev_time.strftime('%H:%M')}")
+
+        for i in range(3): # Current and next 2
+            idx = current_time_idx + i
+            if idx > -1 and idx < len(unique_times):
+                time_entry = unique_times[idx]
+                boss_names = ", ".join(sorted(list(set(j[1] for j in instances if j[0] == time_entry))))
+                
+                line = f"{time_entry.strftime('%H:%M')}: {boss_names}"
+
+                if idx == current_time_idx:
+                    if delta < timedelta(seconds=0):
+                        tooltip_lines.append(f"NOW: {line}")
+                    else:
+                        tooltip_lines.append(f"Next: {line}")
+                else:
+                    tooltip_lines.append(f"      {line}")
+        
         tooltip = "\n".join(tooltip_lines)
 
-        print(json.dumps({"text": f"{display_names} {countdown}", "tooltip": tooltip}))
+        # Text
+        if delta < timedelta(seconds=0):
+            despawn_countdown_delta = timedelta(minutes=15) + delta
+            countdown = format_duration(despawn_countdown_delta)
+            text = f"{display_names} despawns in {countdown}"
+        else:
+            countdown = format_duration(delta)
+            text = f"{display_names} {countdown}"
+
+        print(json.dumps({"text": text, "tooltip": tooltip}))
         sys.stdout.flush()
 
         # sleep until next second boundary for smoother countdown
