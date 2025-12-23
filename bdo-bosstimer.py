@@ -5,31 +5,42 @@ import sys
 from datetime import datetime, timedelta
 from pathlib import Path
 
-JSON_FILE = str(Path(__file__).resolve().parent / "timers.json")
+JSON_BOSSES = str(Path(__file__).resolve().parent / "bosses.json")
+JSON_TIMERS = str(Path(__file__).resolve().parent / "timers.json")
 DATE_FMT = "%Y-%m-%dT%H:%M:%S"
 
 
-def load_bosses(path):
-    with open(path, "r", encoding="utf-8") as f:
-        return json.load(f)
+def load_data():
+    with open(JSON_BOSSES, "r", encoding="utf-8") as f:
+        bosses = json.load(f)
+    with open(JSON_TIMERS, "r", encoding="utf-8") as f:
+        timers = json.load(f)
+    return bosses, timers
 
 
-def generate_instances(bosses, days_ahead=7):
+def generate_instances(bosses, timers, days_ahead=7):
     now = datetime.now()
     instances = []
     for day_offset in range(0, days_ahead + 1):
         date = (now + timedelta(days=day_offset)).date()
-        weekday = date.isoweekday()  # 1=Mon ..7=Sun matches your JSON
+        weekday = str(date.isoweekday())  # "1"=Mon .. "7"=Sun
         date_str = date.isoformat()
-        for boss in bosses:
-            for t in boss.get("times", []):
-                if weekday in t.get("days", []):
-                    dt_str = f"{date_str}T{t['time']}:00"
-                    try:
-                        dt = datetime.fromisoformat(dt_str)
-                    except Exception:
-                        continue
-                    instances.append((dt, boss.get("name", ""), t["time"]))
+        
+        day_schedule = timers.get(weekday, {})
+        for time_str, boss_ids in day_schedule.items():
+            dt_str = f"{date_str}T{time_str}:00"
+            try:
+                dt = datetime.fromisoformat(dt_str)
+            except Exception:
+                continue
+
+            for boss_id in boss_ids:
+                boss = bosses.get(boss_id)
+                # Skip if boss doesn't exist or is disabled
+                if not boss or not boss.get("enabled", True):
+                    continue
+                instances.append((dt, boss.get("name", "Unknown"), time_str))
+                
     return instances
 
 
@@ -57,14 +68,14 @@ def format_duration(td):
 
 def main():
     try:
-        bosses = load_bosses(JSON_FILE)
+        bosses, timers = load_data()
     except Exception as e:
-        print("Error loading JSON")
-        print(f"tooltip:Failed to load {JSON_FILE}: {e}")
+        print("Error loading JSON files")
+        print(f"tooltip:Failed to load data: {e}")
         sys.exit(1)
 
     # Pre-generate instances once and refresh each minute in case of day rollover / JSON changes
-    instances = generate_instances(bosses, days_ahead=8)
+    instances = generate_instances(bosses, timers, days_ahead=8)
     instances.sort(key=lambda x: x[0])
     last_reload = time.time()
 
@@ -74,8 +85,8 @@ def main():
         # reload JSON and instances every 60s to pick up edits and day changes
         if time.time() - last_reload > 60:
             try:
-                bosses = load_bosses(JSON_FILE)
-                instances = generate_instances(bosses, days_ahead=8)
+                bosses, timers = load_data()
+                instances = generate_instances(bosses, timers, days_ahead=8)
                 instances.sort(key=lambda x: x[0])
             except Exception:
                 pass

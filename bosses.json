@@ -1,0 +1,58 @@
+{
+  "garmoth": {
+    "name": "Garmoth",
+    "enabled": true
+  },
+  "kzarka": {
+    "name": "Kzarka",
+    "enabled": true
+  },
+  "karanda": {
+    "name": "Karanda",
+    "enabled": true
+  },
+  "kutum": {
+    "name": "Kutum",
+    "enabled": true
+  },
+  "nouver": {
+    "name": "Nouver",
+    "enabled": true
+  },
+  "bulgasal": {
+    "name": "Bulgasal",
+    "enabled": true
+  },
+  "golden_pig_king": {
+    "name": "Golden Pig King",
+    "enabled": true
+  },
+  "sangoon": {
+    "name": "Sangoon",
+    "enabled": true
+  },
+  "uturi": {
+    "name": "Uturi",
+    "enabled": true
+  },
+  "offin": {
+    "name": "Offin",
+    "enabled": false
+  },
+  "quint": {
+    "name": "Quint",
+    "enabled": false
+  },
+  "muraka": {
+    "name": "Muraka",
+    "enabled": false
+  },
+  "vell": {
+    "name": "Vell",
+    "enabled": true
+  },
+  "black_shadow": {
+    "name": "Black Shadow",
+    "enabled": false
+  }
+}

@@ -4,7 +4,7 @@ This is a script to add the upcoming bdo boss encounters to your waybar.
 
 ## Installation
 
-Place bdo-bosstimer.py and timers.json in a directory of your choice.
+Place `bdo-bosstimer.py`, `timers.json`, and `bosses.json` in a directory of your choice.
 
 Add the following to your module section of `~/.config/waybar/config.jsonc`:
 
