@@ -11,6 +11,9 @@
     "05:00": [
       "kzarka"
     ],
+    "08:30": [
+      "yeti"
+    ],
     "09:00": [
       "kutum"
     ],
@@ -25,10 +28,16 @@
       "karanda",
       "uturi"
     ],
+    "17:30": [
+      "yeti"
+    ],
     "19:00": [
       "sangoon",
       "golden_pig_king",
       "nouver"
+    ],
+    "21:45": [
+      "yeti"
     ],
     "22:15": [
       "kzarka",
@@ -52,6 +61,9 @@
     "05:00": [
       "nouver"
     ],
+    "08:30": [
+      "yeti"
+    ],
     "09:00": [
       "kzarka"
     ],
@@ -65,10 +77,16 @@
       "golden_pig_king",
       "nouver"
     ],
+    "17:30": [
+      "yeti"
+    ],
     "19:00": [
       "sangoon",
       "karanda",
       "uturi"
+    ],
+    "21:45": [
+      "yeti"
     ],
     "22:15": [
       "golden_pig_king",
@@ -92,6 +110,9 @@
     "05:00": [
       "kzarka"
     ],
+    "08:30": [
+      "yeti"
+    ],
     "09:00": [
       "karanda"
     ],
@@ -106,8 +127,14 @@
       "kutum",
       "offin"
     ],
+    "17:30": [
+      "yeti"
+    ],
     "19:00": [
       "vell"
+    ],
+    "21:45": [
+      "yeti"
     ],
     "22:15": [
       "karanda",
@@ -132,6 +159,9 @@
     "05:00": [
       "nouver"
     ],
+    "08:30": [
+      "yeti"
+    ],
     "09:00": [
       "kutum"
     ],
@@ -142,10 +172,16 @@
       "kzarka",
       "uturi"
     ],
+    "17:30": [
+      "yeti"
+    ],
     "19:00": [
       "bulgasal",
       "kutum",
       "uturi"
+    ],
+    "21:45": [
+      "yeti"
     ],
     "22:15": [
       "golden_pig_king",
@@ -169,6 +205,9 @@
     "05:00": [
       "karanda"
     ],
+    "08:30": [
+      "yeti"
+    ],
     "09:00": [
       "kzarka"
     ],
@@ -182,9 +221,15 @@
       "nouver",
       "sangoon"
     ],
+    "17:30": [
+      "yeti"
+    ],
     "19:00": [
       "golden_pig_king",
       "offin"
+    ],
+    "21:45": [
+      "yeti"
     ],
     "22:15": [
       "bulgasal",
@@ -209,6 +254,9 @@
     "05:00": [
       "nouver"
     ],
+    "08:30": [
+      "yeti"
+    ],
     "09:00": [
       "kutum"
     ],
@@ -223,11 +271,17 @@
       "golden_pig_king",
       "uturi"
     ],
+    "17:30": [
+      "yeti"
+    ],
     "19:00": [
       "bulgasal",
       "karanda",
       "kzarka",
       "sangoon"
+    ],
+    "21:45": [
+      "yeti"
     ],
     "23:15": [
       "garmoth"
@@ -248,6 +302,9 @@
     "05:00": [
       "kutum"
     ],
+    "08:30": [
+      "yeti"
+    ],
     "09:00": [
       "nouver"
     ],
@@ -260,8 +317,14 @@
     "16:00": [
       "vell"
     ],
+    "17:30": [
+      "yeti"
+    ],
     "19:15": [
       "garmoth"
+    ],
+    "21:45": [
+      "yeti"
     ],
     "22:15": [
       "golden_pig_king",
