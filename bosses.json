@@ -57,6 +57,6 @@
   },
   "yeti": {
     "name": "Yeti",
-    "enabled": true
+    "enabled": false
   }
 }

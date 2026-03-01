@@ -5,45 +5,27 @@
       "uturi"
     ],
     "02:00": [
-      "bulgasal",
+      "sangoon",
       "karanda"
     ],
-    "05:00": [
-      "kzarka"
-    ],
-    "08:30": [
-      "yeti"
-    ],
-    "09:00": [
-      "kutum"
-    ],
     "12:00": [
-      "kzarka"
+      "sangoon",
+      "nouver"
     ],
     "14:00": [
       "garmoth"
     ],
     "16:00": [
-      "kzarka",
-      "karanda",
-      "uturi"
-    ],
-    "17:30": [
-      "yeti"
+      "uturi",
+      "kutum"
     ],
     "19:00": [
-      "sangoon",
       "golden_pig_king",
       "nouver"
     ],
-    "21:45": [
-      "yeti"
-    ],
     "22:15": [
       "kzarka",
-      "kutum",
-      "bulgasal",
-      "uturi"
+      "bulgasal"
     ],
     "23:15": [
       "garmoth"
@@ -51,24 +33,12 @@
   },
   "2": {
     "00:15": [
-      "golden_pig_king",
       "karanda",
       "sangoon"
     ],
-    "02:00": [
-      "kutum"
-    ],
-    "05:00": [
-      "nouver"
-    ],
-    "08:30": [
-      "yeti"
-    ],
-    "09:00": [
-      "kzarka"
-    ],
     "12:00": [
-      "kutum"
+      "kutum",
+      "bulgasal"
     ],
     "14:00": [
       "garmoth"
@@ -77,22 +47,13 @@
       "golden_pig_king",
       "nouver"
     ],
-    "17:30": [
-      "yeti"
-    ],
     "19:00": [
-      "sangoon",
-      "karanda",
+      "kzarka",
       "uturi"
     ],
-    "21:45": [
-      "yeti"
-    ],
     "22:15": [
-      "golden_pig_king",
       "muraka",
-      "quint",
-      "bulgasal"
+      "quint"
     ],
     "23:15": [
       "garmoth"
@@ -100,46 +61,25 @@
   },
   "3": {
     "00:15": [
-      "bulgasal",
-      "kzarka"
-    ],
-    "02:00": [
       "golden_pig_king",
-      "karanda"
-    ],
-    "05:00": [
       "kzarka"
-    ],
-    "08:30": [
-      "yeti"
-    ],
-    "09:00": [
-      "karanda"
     ],
     "12:00": [
-      "nouver"
+      "sangoon",
+      "karanda"
     ],
     "14:00": [
       "garmoth"
     ],
     "16:00": [
       "bulgasal",
-      "kutum",
       "offin"
-    ],
-    "17:30": [
-      "yeti"
     ],
     "19:00": [
       "vell"
     ],
-    "21:45": [
-      "yeti"
-    ],
     "22:15": [
-      "karanda",
-      "kzarka",
-      "sangoon",
+      "nouver",
       "uturi"
     ],
     "23:15": [
@@ -148,46 +88,27 @@
   },
   "4": {
     "00:15": [
-      "bulgasal",
-      "nouver",
-      "golden_pig_king"
-    ],
-    "02:00": [
-      "kutum",
-      "sangoon"
-    ],
-    "05:00": [
+      "uturi",
       "nouver"
     ],
-    "08:30": [
-      "yeti"
-    ],
-    "09:00": [
-      "kutum"
+    "02:00": [
+      "golden_pig_king",
+      "kzarka"
     ],
     "14:00": [
       "garmoth"
     ],
     "16:00": [
-      "kzarka",
-      "uturi"
-    ],
-    "17:30": [
-      "yeti"
+      "sangoon",
+      "karanda"
     ],
     "19:00": [
       "bulgasal",
-      "kutum",
-      "uturi"
-    ],
-    "21:45": [
-      "yeti"
+      "kutum"
     ],
     "22:15": [
-      "golden_pig_king",
       "muraka",
-      "quint",
-      "sangoon"
+      "quint"
     ],
     "23:15": [
       "garmoth"
@@ -196,46 +117,30 @@
   "5": {
     "00:15": [
       "karanda",
-      "uturi"
+      "golden_pig_king"
     ],
     "02:00": [
       "bulgasal",
       "nouver"
     ],
-    "05:00": [
-      "karanda"
-    ],
-    "08:30": [
-      "yeti"
-    ],
-    "09:00": [
-      "kzarka"
-    ],
     "12:00": [
-      "karanda"
+      "kutum",
+      "uturi"
     ],
     "14:00": [
       "garmoth"
     ],
     "16:00": [
-      "nouver",
-      "sangoon"
-    ],
-    "17:30": [
-      "yeti"
+      "bulgasal",
+      "kzarka"
     ],
     "19:00": [
-      "golden_pig_king",
+      "sangoon",
       "offin"
     ],
-    "21:45": [
-      "yeti"
-    ],
     "22:15": [
-      "bulgasal",
-      "kutum",
-      "karanda",
-      "uturi"
+      "golden_pig_king",
+      "kutum"
     ],
     "23:15": [
       "garmoth"
@@ -243,73 +148,40 @@
   },
   "6": {
     "00:15": [
-      "golden_pig_king",
-      "kzarka",
-      "sangoon"
+      "bulgasal",
+      "kzarka"
     ],
     "02:00": [
-      "bulgasal",
+      "uturi",
       "offin"
     ],
-    "05:00": [
-      "nouver"
-    ],
-    "08:30": [
-      "yeti"
-    ],
-    "09:00": [
-      "kutum"
-    ],
     "12:00": [
+      "golden_pig_king",
       "nouver"
     ],
     "14:00": [
       "garmoth"
     ],
     "16:00": [
-      "black_shadow",
-      "golden_pig_king",
-      "uturi"
-    ],
-    "17:30": [
-      "yeti"
+      "black_shadow"
     ],
     "19:00": [
-      "bulgasal",
       "karanda",
-      "kzarka",
       "sangoon"
-    ],
-    "21:45": [
-      "yeti"
-    ],
-    "23:15": [
-      "garmoth"
     ]
   },
   "7": {
     "00:15": [
       "bulgasal",
-      "kutum",
-      "nouver",
-      "uturi"
+      "nouver"
     ],
     "02:00": [
       "golden_pig_king",
-      "kzarka",
-      "sangoon"
-    ],
-    "05:00": [
       "kutum"
     ],
-    "08:30": [
-      "yeti"
-    ],
-    "09:00": [
-      "nouver"
-    ],
     "12:00": [
-      "kzarka"
+      "kzarka",
+      "uturi"
     ],
     "14:00": [
       "garmoth"
@@ -317,19 +189,11 @@
     "16:00": [
       "vell"
     ],
-    "17:30": [
-      "yeti"
-    ],
     "19:15": [
       "garmoth"
     ],
-    "21:45": [
-      "yeti"
-    ],
     "22:15": [
-      "golden_pig_king",
-      "kzarka",
-      "nouver",
+      "karanda",
       "sangoon"
     ],
     "23:15": [
